@@ -1,0 +1,20 @@
+
+spring:
+  profiles:
+    active: dev
+
+org:
+  quartz:
+    scheduler:
+      instanceName: app_quartz_scheduler
+      instanceId: AUTO
+    threadPool:
+      class:  org.quartz.simpl.SimpleThreadPool
+      threadCount: 10
+      threadPriority: 5
+    jobStore:
+      class: org.quartz.impl.jdbcjobstore.JobStoreTX
+      driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+      isClustered: true
+      clusterCheckinInterval: 20000
+      tablePrefix: qrtz_
