@@ -2,6 +2,7 @@ package com.example.quartz.service;
 
 import com.example.quartz.entity.User;
 import com.example.quartz.mapper.UserMapper;
+import com.example.quartz.util.Utils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,5 +27,9 @@ public class UserService {
         for (User user : list) {
             System.out.println(user.toString());
         }
+    }
+
+    public void addUser(String userName){
+        userMapper.insert(Utils.makeTimeId(),userName);
     }
 }
