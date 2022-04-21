@@ -18,3 +18,7 @@ org:
       isClustered: true
       clusterCheckinInterval: 20000
       tablePrefix: qrtz_
+mybatis:
+  mapper-locations: classpath*:com/example/quartz/mapper/*.xml
+  configuration:
+    mapUnderscoreToCamelCase: true
